@@ -2,9 +2,7 @@ package com.github.colingrime.listeners;
 
 import com.github.colingrime.SkyMines;
 import com.github.colingrime.skymines.SkyMine;
-import io.lumine.mythic.lib.api.item.NBTItem;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,9 +26,6 @@ public class ParameterListeners implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
-        Player p = event.getPlayer();
-        NBTItem nbtItem = NBTItem.get(p.getInventory().getItemInMainHand());
-        if (nbtItem.hasType()) return;
         blockAccessIfParameter(event.getBlock(), event);
 
     }
